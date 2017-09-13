@@ -1,0 +1,15 @@
+{
+  "name": "vinayhebbar",
+  "version": "1.0.0",
+  "description": "Basic nodejs app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "winston": "2.2.0",
+    "winston-daily-rotate-file": "1.0.1"
+  }
+}
