@@ -1,6 +1,6 @@
 var logger = require('winston')
 var WinstonDailyRotateFile = require('winston-daily-rotate-file')
-
+var integratorExtension = require('express-integrator-extension')
 
 var consoleTransportOpts = {
   colorize: true,
@@ -38,4 +38,17 @@ console.log = function hijacked_log (level) {
   }
 }
 
-logger.info('Basic project server started')
+var options = {
+  connectors: {'123': '123'},
+  systemToken: '12323',
+  port: 5000
+}
+
+integratorExtension.createServer(options, function (error) {
+  if (error) {
+    logger.error('Failed to create integrator extension server due to: ' + error.message)
+    throw error
+  }
+
+  logger.info('logName=serverStarted')
+})
